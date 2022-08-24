@@ -26,7 +26,7 @@ Before and after the optimization run:
 
 # Features / To-do
 - [x] Batch Gradle optimization on all projects in a directory
-- [ ] Minimal and easy-to-use UI
+- [x] Minimal and easy-to-use UI
 - [x] Full drag-and-drop support
 - [x] Checks if the project directory is valid
 - [x] Reports optimization progress
