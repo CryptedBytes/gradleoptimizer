@@ -25,8 +25,8 @@ namespace csharpuxtest
             var timer = new Stopwatch();
             timer.Start();
 
-            androidStudioProjectsFolderLocation = textBox1.Text.Replace("\"","");
-            textBox1.Text = androidStudioProjectsFolderLocation;
+            androidStudioProjectsFolderLocation = workingDirEntryTextBox.Text.Replace("\"","");
+            workingDirEntryTextBox.Text = androidStudioProjectsFolderLocation;
             List<String> directoryList = new List<String>();
             String[] directoryArray;
             directoryArray = Directory.GetDirectories(androidStudioProjectsFolderLocation);
@@ -78,6 +78,63 @@ namespace csharpuxtest
 
 
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+              
+            }
+            else e.Effect = DragDropEffects.None;
+        }
+
+        private void Form1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] draggedItems = (string[]) e.Data.GetData(DataFormats.FileDrop);
+            FileAttributes attr = File.GetAttributes(draggedItems[0]);
+
+            if (draggedItems.Length > 1) {
+                MessageBox.Show("Please drag and drop exactly one folder that contains your Android Studio projects.", "Gradle Cleaner - Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (Directory.Exists(draggedItems[0]) && attr.HasFlag(FileAttributes.Directory))
+            {
+                workingDirEntryTextBox.Text = draggedItems[0];
+
+            }
+            else if(!Directory.Exists(draggedItems[0]) || !attr.HasFlag(FileAttributes.Directory))
+            {
+                MessageBox.Show("Directory does not exists or is a file. Please drag and drop a folder.", "Gradle Cleaner - Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+           
+
+        }
+
+        private void workingDirEntryTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Directory.Exists(workingDirEntryTextBox.Text))
+                {
+                    buttonStart.Enabled = true;
+                }
+                else
+                {
+                    buttonStart.Enabled = false;
+                }
+            }
+            catch
+            {
+
+            }
         }
     }
 }

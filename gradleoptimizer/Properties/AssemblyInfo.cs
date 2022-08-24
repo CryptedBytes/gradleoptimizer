@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("csharpuxtest")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Gradle Cleaner")]
+[assembly: AssemblyDescription("Run gradle clean on all Android Studio projects at once")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("csharpuxtest")]
+[assembly: AssemblyCompany("Bugra Guray")]
+[assembly: AssemblyProduct("Gradle Cleaner")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
