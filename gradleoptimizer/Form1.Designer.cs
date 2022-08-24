@@ -54,11 +54,15 @@
             // 
             // workingDirEntryTextBox
             // 
+            this.workingDirEntryTextBox.ForeColor = System.Drawing.Color.Gray;
             this.workingDirEntryTextBox.Location = new System.Drawing.Point(8, 54);
             this.workingDirEntryTextBox.Name = "workingDirEntryTextBox";
             this.workingDirEntryTextBox.Size = new System.Drawing.Size(455, 20);
-            this.workingDirEntryTextBox.TabIndex = 1;
+            this.workingDirEntryTextBox.TabIndex = 2;
+            this.workingDirEntryTextBox.Text = "Instead of entering path manually, you can also drag and drop your project folder" +
+    " here";
             this.workingDirEntryTextBox.TextChanged += new System.EventHandler(this.workingDirEntryTextBox_TextChanged);
+            this.workingDirEntryTextBox.Enter += new System.EventHandler(this.workingDirEntryTextBox_Enter);
             // 
             // label1
             // 
@@ -111,7 +115,7 @@
             this.chkbx_hidecmd.Location = new System.Drawing.Point(8, 109);
             this.chkbx_hidecmd.Name = "chkbx_hidecmd";
             this.chkbx_hidecmd.Size = new System.Drawing.Size(132, 17);
-            this.chkbx_hidecmd.TabIndex = 6;
+            this.chkbx_hidecmd.TabIndex = 1;
             this.chkbx_hidecmd.Text = "Hide console windows";
             this.chkbx_hidecmd.UseVisualStyleBackColor = true;
             // 

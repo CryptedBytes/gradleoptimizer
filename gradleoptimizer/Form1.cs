@@ -120,6 +120,7 @@ namespace csharpuxtest
 
         private void workingDirEntryTextBox_TextChanged(object sender, EventArgs e)
         {
+            workingDirEntryTextBox.ForeColor = Color.Black;
             try
             {
                 if (Directory.Exists(workingDirEntryTextBox.Text))
@@ -134,6 +135,15 @@ namespace csharpuxtest
             catch
             {
 
+            }
+        }
+
+        private void workingDirEntryTextBox_Enter(object sender, EventArgs e)
+        {
+            if (workingDirEntryTextBox.Text == "Instead of entering path manually, you can also drag and drop your project folder here")
+            {
+                workingDirEntryTextBox.Text = "";
+                workingDirEntryTextBox.ForeColor = Color.Black;
             }
         }
     }
