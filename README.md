@@ -1,5 +1,6 @@
 # Gradle Optimizer / Batch Gradle Cleaner
 Run Gradle clean on all projects in a directory - with a single click!
+Net Framework 4.7.2 required
 
 # How does it work?
 GradleOptimizer iterates through all files in your Android Studio projects folder and runs 'gradlew --clean' command on them.
